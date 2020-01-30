@@ -44,6 +44,7 @@ document.addEventListener("DOMContentLoaded", function() {
             console.log(breedName);
             if (breedMenu.options[breedMenu.selectedIndex].value == breedName[0]) {
                 const li = document.createElement('li');
+                li.onclick = function() {this.style.color = 'red';}
                 li.textContent = breedName;
                 breedsList.append(li);
             } else {
@@ -51,13 +52,13 @@ document.addEventListener("DOMContentLoaded", function() {
             }
         }
     });
-
     breedMenu.onchange = function () {
         console.log(jsonBreed);
         breedsList.innerHTML = '';
         for(const breedName in jsonBreed.message) {
             if (breedMenu.options[breedMenu.selectedIndex].value == breedName[0]) {
                 const li = document.createElement('li');
+                li.onclick = function() {this.style.color = 'red';}
                 li.textContent = breedName;
                 breedsList.append(li);
             }
